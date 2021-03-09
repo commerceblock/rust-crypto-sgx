@@ -35,7 +35,6 @@ impl<'a> AesGcm<'a> {
 
         let mut iv = [0u8; 16];
         copy_memory(nonce, &mut iv);
-        iv[15] = 1u8;
         let mut cipher = ctr(key_size,key,&iv);
         let temp_block = [0u8; 16];
         let mut final_block = [0u8; 16];
